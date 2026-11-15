@@ -1,15 +1,17 @@
 ## __GET ssh connect to VM ec2 server__
-### wsl -d ubuntu
+    wsl -d ubuntu
 (get inside WSL Windows Subsystem for Linux)
-### chmod  700 mykey.pem
+    
+    chmod  700 mykey.pem
 (permission edit for the file)
-### ssh -i mykey.pem ubuntu@YOUR_EC2_PUBLIC_IP
+    
+    ssh -i mykey.pem ubuntu@YOUR_EC2_PUBLIC_IP
 (connect it to ec2 machine)
 
 
 ## __Install NVM for Node installation__
 
-### curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
+    curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
 (install NVM)
 ### source ~/.bashrc 
 (executes the updated configuration immediately, without requiring you to close and reopen your SSH session.)
