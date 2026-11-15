@@ -37,8 +37,8 @@
     pm2 serve dist 3000 --name react-app --spa
     pm2 save
 
-__*OR JUST *__
-    
+*__OR JUST__*
+
     npm run build
     npm install -g serve
     pm2 serve dist 3000 --name react-app --spa
