@@ -6,7 +6,6 @@
 ### ssh -i mykey.pem ubuntu@YOUR_EC2_PUBLIC_IP
 (connect it to ec2 machine)
 
--------------------------------------------------------------------
 
 ## __Install NVM for Node installation__
 
@@ -17,7 +16,6 @@
 ### nvm install --lts
 (Installs the latest Node.js LTS version)
 
--------------------------------------------------------------------
 
 ## Install PM2
 
@@ -43,7 +41,6 @@ pm2 serve dist 3000 --name react-app --spa
 pm2 startup
 pm2 save
 
--------------------------------------------------------------------
 
 ## Install Nodejs with sudo
 
