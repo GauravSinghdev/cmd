@@ -70,3 +70,38 @@
 
 2.Docker Compose file 
 (docker-compose.yaml)
+    
+    services:
+        web:
+            build: .
+            ports:
+                - "8080:80"
+            environment:
+                - DATABASE_URL=postgres://user:password@db:5432/mydb
+            depends_on:
+                - db
+            networks:
+                - app-network
+
+        db:
+            image: postgres:16-alpine
+            environment:
+            POSTGRES_USER: user
+            POSTGRES_PASSWORD: password
+            POSTGRES_DB: mydb
+            volumes:
+            - db-data:/var/lib/postgresql/data
+            networks:
+            - app-network
+
+volumes:
+  db-data:
+
+networks:
+  app-network:
+
+
+
+Docker compose file run
+
+    docker-compose up

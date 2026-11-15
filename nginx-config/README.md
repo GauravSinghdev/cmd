@@ -1,12 +1,13 @@
 ## __Install NGINX__
-sudo apt update
-sudo apt install nginx
+    
+    sudo apt update
+    sudo apt install nginx
 
 
 ## __edit the NGINX file__
 
-sudo rm sudo vi /etc/nginx/nginx.conf
-sudo vi /etc/nginx/nginx.conf
+    sudo rm sudo vi /etc/nginx/nginx.conf
+    sudo vi /etc/nginx/nginx.conf
 
 
     events {}
@@ -49,4 +50,4 @@ sudo vi /etc/nginx/nginx.conf
 
 ## __Reload NGINX__
 
-sudo nginx -s reload
+    sudo nginx -s reload
