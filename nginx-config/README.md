@@ -11,7 +11,7 @@ sudo vi /etc/nginx/nginx.conf
 
 events {}
 
-http {
+    http {
     map $http_upgrade $connection_upgrade {
         default upgrade;
         ''      close;
