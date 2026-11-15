@@ -9,7 +9,7 @@ sudo rm sudo vi /etc/nginx/nginx.conf
 sudo vi /etc/nginx/nginx.conf
 
 
-events {}
+    events {}
 
     http {
     map $http_upgrade $connection_upgrade {
