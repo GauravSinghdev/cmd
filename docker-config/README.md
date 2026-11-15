@@ -1,78 +1,72 @@
-## 1) PUll docker image from Hub
+## __PUll docker image from Hub__
 
-docker run mongo
-
-docker run -d mongo
-(detached mode run in background)
-
-*__IDEALLY RUN:__*
-docker run -p 2701:2701 -d mongo
+    docker run mongo
+    docker run -d mongo  
+    docker run -p 2701:2701 -d mongo
 
 
-## 2) basic cmd
-
-*__list of containers:__*
-docker ps
-
-docker images
-docker kill container_id
+## __basic cmd__
+    
+    docker ps
+    docker images
+    docker kill container_id
 
 
-## 3) Dockerfile
+## __Dockerfile__
 
-FROM node:20
+    FROM node:20-alpine
 
-WORKDIR /app
+    WORKDIR /app
 
-COPY . .
+    COPY . .
 
-RUN npm install
-RUN npm run build
-Run npx prisma generate
+    RUN npm install
+    RUN npm run build
+    Run npx prisma generate
 
-EXPOSE 3000
+    EXPOSE 3000
 
-CMD ["node", "dist/nodejs"]
-
-
-## 4) .dockerignore
-
-node_modules
-dist
+    CMD ["node", "dist/nodejs"]
 
 
-## 5) Build the image
+## __.dockerignore__
 
-docker built -t karavaan-be (path or . for current)
-
-
-## 6) Get inside the container 
-
-docker exec -it container_id /bin/bash
+    node_modules
+    dist
 
 
-## 7) Inject the env 
+## __Build the image__
 
-docker run -p 2701:2701  -e DATABASE_URL="" -d nodejs-app
-
-
-## 8) Push your image to docker hub
-
-docker login
-docker push karadevs/react-app
+    docker built -t karavaan-be folder_path
 
 
-## 9) Docker Multiple Container
+## __Get inside the container__
 
-### using Network and Volume
-docker network create kara_network  //create a network
-docker volume create volume_database //create a volume
-docker run -d -v volume_database:/data/db --name mongo --network kara_network mongo
-docker run --network kara_network -p 3000:3000 react_app_image
-
-docker network ls
-docker volume ls
+    docker exec -it container_id /bin/bash
 
 
-## 10) Docker Compose file 
+## __Inject the env__
+
+    docker run -p 2701:2701  -e DATABASE_URL="" -d nodejs-app
+
+
+## __Push your image to docker hub__
+
+    docker login
+    docker push karadevs/react-app
+
+
+## __Docker Multiple Container__
+1.using Network and Volume
+
+    docker network create kara_network  //create a network
+    docker volume create volume_database //create a volume
+    docker run -d -v volume_database:/data/db --name mongo --network kara_network mongo
+    docker run --network kara_network -p 3000:3000 react_app_image
+
+    docker network ls
+    docker volume ls
+
+
+2.Docker Compose file 
 (docker-compose.yaml)
